@@ -15,6 +15,7 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
+			    "clangd",
 				"ty",
 				"rust_analyzer",
 				"lua_ls",
