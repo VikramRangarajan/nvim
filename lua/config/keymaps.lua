@@ -59,3 +59,29 @@ keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+
+-- OpenCode Bindings --
+-- Recommended/example keymaps.
+keymap({ "n", "x" }, "<leader>a", function()
+	require("opencode").ask("@this: ", { submit = true })
+end, { desc = "Ask opencode…" })
+keymap({ "n", "x" }, "<leader>ax", function()
+	require("opencode").select()
+end, { desc = "Execute opencode action…" })
+keymap({ "n", "t" }, "<leader>a.", function()
+	require("opencode").toggle()
+end, { desc = "Toggle opencode" })
+
+keymap({ "n", "x" }, "<leader>ago", function()
+	return require("opencode").operator("@this ")
+end, { desc = "Add range to opencode", expr = true })
+keymap("n", "<leader>agoo", function()
+	return require("opencode").operator("@this ") .. "_"
+end, { desc = "Add line to opencode", expr = true })
+
+keymap("n", "<S-C-u>", function()
+	require("opencode").command("session.half.page.up")
+end, { desc = "Scroll opencode up" })
+keymap("n", "<S-C-d>", function()
+	require("opencode").command("session.half.page.down")
+end, { desc = "Scroll opencode down" })
