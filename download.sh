@@ -22,3 +22,7 @@ mkdir ripgrep_stuff
 tar -xvzf ripgrep-15.1.0-x86_64-unknown-linux-musl.tar.gz -C ripgrep_stuff/
 mv ripgrep_stuff/ripgrep-15.1.0-x86_64-unknown-linux-musl/rg ~/.local/bin
 rm -r ripgrep*
+
+# Install starship
+curl -sS https://starship.rs/install.sh | sh -s -- -b ~/.local/bin -y
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
