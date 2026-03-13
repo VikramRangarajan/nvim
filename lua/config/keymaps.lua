@@ -85,3 +85,7 @@ end, { desc = "Scroll opencode up" })
 keymap("n", "<S-C-d>", function()
 	require("opencode").command("session.half.page.down")
 end, { desc = "Scroll opencode down" })
+
+keymap("n", "<leader>C", function()
+	require("csvview").toggle()
+end, { desc = "Toggle CSV viewer" })
