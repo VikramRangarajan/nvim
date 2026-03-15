@@ -15,8 +15,8 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
-			    "clangd",
-				"ty",
+				"clangd",
+				"pyrefly",
 				"rust_analyzer",
 				"lua_ls",
 			},

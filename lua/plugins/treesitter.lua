@@ -3,7 +3,7 @@ return {
 	build = ":TSUpdate",
 
 	config = function()
-		require("nvim-treesitter.config").setup({
+		require("nvim-treesitter").setup({
 			ensure_installed = {
 				"javascript",
 				-- The five parsers below should always be installed
